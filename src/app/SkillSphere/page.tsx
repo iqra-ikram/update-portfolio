@@ -5,6 +5,11 @@ import { FaGithub, FaHtml5, FaReact } from "react-icons/fa";
 import { SiTypescript, SiJavascript } from "react-icons/si";
 import { IoLogoCss3 } from "react-icons/io5";
 import { RiNextjsFill } from "react-icons/ri";
+import { FaPython } from "react-icons/fa6";
+import { SiStreamlit } from "react-icons/si";
+import { RiTailwindCssFill } from "react-icons/ri";
+import { FaInvision } from "react-icons/fa";
+
 
 const Card: React.FC<{ children: React.ReactNode; className?: string }> = ({ children, className }) => (
   <div className={`bg-white shadow-md rounded-lg p-4 ${className}`}>{children}</div>
@@ -26,6 +31,7 @@ const skills = [
   { name: 'React', percentage: 65 },
   { name: 'Next.js', percentage: 75 },
   { name: 'TailwindCSS', percentage: 95 },
+  
 ];
 
 const tools = [
@@ -37,6 +43,11 @@ const tools = [
   { name: "CSS", icon: <IoLogoCss3 className="text-blue-500 text-6xl" /> },
   { name: "Next.js", icon: <RiNextjsFill className="text-black text-6xl" /> },
   { name: "React.js", icon: <FaReact  className="text-black text-6xl" /> },
+  { name: "Python", icon: <FaPython  className="text-black text-6xl" /> },
+  { name: "Streamlit", icon: <SiStreamlit  className="text-black text-6xl" /> },
+  { name: "Tailwind CSS", icon: <RiTailwindCssFill  className="text-black text-6xl" /> },
+  { name: "Linkdin", icon: <FaInvision  className="text-black text-6xl" /> },
+
 ];
 
 const SkillProgressBar: React.FC = () => {

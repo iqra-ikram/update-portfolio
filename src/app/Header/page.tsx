@@ -49,7 +49,7 @@ const Header = () => {
           {/* Download CV Button */}
           <button className="inline-flex items-center bg-transparent border-0 py-1 px-3 focus:outline-none hover:bg-purple-200 text-black rounded text-base mt-4 md:mt-0">
             <a
-              href="/cv.pdf" 
+              href="/mycv.pdf" 
               target="_blank"
               rel="noopener noreferrer"
             >

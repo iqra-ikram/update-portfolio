@@ -4,6 +4,7 @@ import Hero from "./Hero/page";
 
 import SkillProgressBar from "./SkillSphere/page";
 import Contact from "./Contact/page";
+import Projects from "./Project/page";
 
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
 
 <Hero/>
 <About/>
+<Projects/>
 <SkillProgressBar/>
 
 <Contact/>

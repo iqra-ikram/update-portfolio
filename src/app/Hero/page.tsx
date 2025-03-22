@@ -41,7 +41,7 @@ const Hero = () => {
               build something extraordinary together.
             </p>
             <div className="flex justify-center lg:justify-start">
-              <Link href="/Project">
+              <Link href="/cv.pdf">
                 <button className="bg-yellow-400 hover:bg-yellow-500 text-black px-6 py-3 rounded-full font-semibold shadow-lg transition-transform hover:scale-105">
                   Hire Me
                 </button>
