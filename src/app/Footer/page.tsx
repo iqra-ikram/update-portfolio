@@ -1,94 +1,77 @@
-import Link from 'next/link'
-import React from 'react'
+import Link from "next/link";
+import React from "react";
+import { FaGithub, FaLinkedin, FaEnvelope, FaFacebook } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className="text-gray-600 body-font bg-gradient-to-r from-blue-300 via-pink-300 to-purple-400">
-      <footer className="text-gray-600 body-font">
-  <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-    
-    <Link href="/" className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-            <img
-              src="https://cdn0.iconfinder.com/data/icons/software-development-19/66/11_female_developer_software_developer_female_designer_coding_expert_female_programmer_software_engineer-512.png" // Replace this with your logo's path
-              alt="Logo"
-              className="w-10 h-10 rounded-full"
-            />
-          </Link>
-      <span className="ml-3 text-xl font-bold text-black">Iqra Ikram</span>
+    <footer className="bg-black text-white py-10 relative overflow-hidden">
+      {/* Glowing Background Blobs */}
+      <div className="absolute -top-32 -left-32 w-80 h-80 bg-purple-700 blur-3xl rounded-full opacity-30" />
+      <div className="absolute -bottom-32 -right-32 w-80 h-80 bg-pink-500 blur-3xl rounded-full opacity-30" />
 
-    <p className="text-sm text-black sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
-      ©2025 Iqra Ikram —
-      <a
-        href="https://twitter.com/knyttneve"
-        className="text-blue-600 ml-1"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        @contactiqra12@gmail.com
-      </a>
-    </p>
-    <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
-      <a className="text-blue-700">
-        <svg
-          fill="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          className="w-5 h-5"
-          viewBox="0 0 24 24"
-        >
-          <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
-        </svg>
-      </a>
-      <a className="ml-3 text-blue-500">
-        <svg
-          fill="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          className="w-5 h-5"
-          viewBox="0 0 24 24"
-        >
-          <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
-        </svg>
-      </a>
-      <a className="ml-3 text-pink-500">
-        <svg
-          fill="none"
-          stroke="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          className="w-5 h-5"
-          viewBox="0 0 24 24"
-        >
-          <rect width={20} height={20} x={2} y={2} rx={5} ry={5} />
-          <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01" />
-        </svg>
-      </a>
-      <a className="ml-3 text-blue-700">
-        <svg
-          fill="currentColor"
-          stroke="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={0}
-          className="w-5 h-5"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke="none"
-            d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
+      <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
+        {/* Logo */}
+        <Link href="/" className="flex justify-center items-center gap-2 mb-4">
+          <img
+            src="https://cdn0.iconfinder.com/data/icons/software-development-19/66/11_female_developer_software_developer_female_designer_coding_expert_female_programmer_software_engineer-512.png"
+            alt="Logo"
+            className="w-10 h-10 rounded-full"
           />
-          <circle cx={4} cy={4} r={2} stroke="none" />
-        </svg>
-      </a>
-    </span>
-  </div>
-</footer>
+          <span className="text-xl font-bold text-white">Iqra Ikram</span>
+        </Link>
 
-    </div>
-  )
-}
+        {/* Contact Email */}
+        <p className="text-white/70 text-sm mb-6">
+          Made with ❤️ by Iqra Ikram —{" "}
+          <a
+            href="mailto:iqraikram58@gmail.com"
+            className="text-pink-400 hover:underline"
+          >
+            iqraikram58@gmail.com
+          </a>
+        </p>
 
-export default Footer
+        {/* Social Icons */}
+        <div className="flex justify-center gap-6 text-xl mb-6">
+          <a
+            href="https://github.com/iqra-ikram"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-gray-300 transition"
+          >
+            <FaGithub />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/iqra-ikram-9660732b4/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-400 hover:text-blue-300 transition"
+          >
+            <FaLinkedin />
+          </a>
+          <a
+            href="mailto:iqraikram58@gmail.com"
+            className="text-pink-400 hover:text-pink-300 transition"
+          >
+            <FaEnvelope />
+          </a>
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:text-blue-400 transition"
+          >
+            <FaFacebook />
+          </a>
+        </div>
+
+        {/* Copyright */}
+        <p className="text-sm text-white/40">
+          © {new Date().getFullYear()} Iqra Ikram. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
