@@ -23,7 +23,7 @@ const Header = () => {
             />
           </div>
           <span className="text-xl sm:text-2xl font-extrabold bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 text-transparent bg-clip-text tracking-wide">
-            Iqra's Portfolio
+            Iqra&apos;s Portfolio
           </span>
         </Link>
 

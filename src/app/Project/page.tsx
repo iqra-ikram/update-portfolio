@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image"; // ✅ Next.js image optimization
 
 const projects = [
   { title: "E-Commerce Website", description: "A sleek portfolio showcasing my projects.", image: "/alex.png", link: "https://alex-store-git-main-iqra-ikrams-projects.vercel.app/" },
@@ -50,12 +51,19 @@ export default function Projects() {
               whileHover={{ scale: 1.05, rotate: 1 }}
               className="relative rounded-xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-xl shadow-xl hover:shadow-pink-500/30 transition-all duration-300 group"
             >
-              <div className="p-4 flex flex-col h-full justify-between">
-                <motion.img
+              <motion.div
+                className="w-full h-40 relative rounded-lg mb-4 overflow-hidden border border-white/10 group-hover:scale-105 transition-transform duration-300"
+              >
+                <Image
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-40 object-cover rounded-lg mb-4 border border-white/10 group-hover:scale-105 transition-transform duration-300"
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-lg"
+                  priority
                 />
+              </motion.div>
+              <div className="p-4 flex flex-col h-full justify-between">
                 <h3 className="text-xl font-semibold text-white">{project.title}</h3>
                 <p className="text-sm text-gray-300 mt-2">{project.description}</p>
                 <a
@@ -85,7 +93,9 @@ export default function Projects() {
           >
             ← Previous
           </button>
-          <span className="text-gray-300">Page {currentPage} of {totalPages}</span>
+          <span className="text-gray-300">
+            Page {currentPage} of {totalPages}
+          </span>
           <button
             onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
             disabled={currentPage === totalPages}

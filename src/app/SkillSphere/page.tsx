@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image"; // ✅ Next.js image
 import { VscVscode } from "react-icons/vsc";
 import {
   FaGithub,
@@ -25,10 +26,6 @@ import {
   SiVercel,
 } from "react-icons/si";
 import Marquee from "react-fast-marquee";
-
-/* ──────────────────────────────── */
-/* 1. DATA                                                               */
-/* ──────────────────────────────── */
 
 const skills = [
   { name: "Next.js", percentage: 90 },
@@ -58,10 +55,6 @@ const techStack = [
   { icon: <SiVercel />, name: "Vercel" },
 ];
 
-/* ──────────────────────────────── */
-/* 2. COMPONENT                                                          */
-/* ──────────────────────────────── */
-
 const SkillSphere = () => {
   const [progress, setProgress] = useState<{ [key: string]: number }>({});
 
@@ -73,26 +66,32 @@ const SkillSphere = () => {
 
   return (
     <section className="relative min-h-screen w-full overflow-hidden bg-[#0f0c29] px-6 py-20 font-mono text-white">
-      {/* 🎛 Spinning Grid Background */}
+      {/* 🔲 Background Grid */}
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute inset-0 -rotate-[30deg] scale-125">
           <div className="h-full w-full bg-[radial-gradient(transparent_1px,#ffffff11_1px)] [background-size:24px_24px] animate-spin-slow" />
         </div>
       </div>
 
-      {/* 🖼 Avatar */}
+      {/* 🧑‍💻 Avatar */}
       <div className="mb-12 text-center">
-        <motion.img
+        <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
-          src="https://img.freepik.com/premium-photo/person-coding-project-laptop_1079150-36836.jpg"
-          alt="Developer Avatar"
-          className="mx-auto h-40 w-40 rounded-full border-4 border-white shadow-2xl"
-        />
+          className="mx-auto h-40 w-40 relative rounded-full border-4 border-white shadow-2xl overflow-hidden"
+        >
+          <Image
+            src="https://img.freepik.com/premium-photo/person-coding-project-laptop_1079150-36836.jpg"
+            alt="Developer Avatar"
+            layout="fill"
+            objectFit="cover"
+            priority
+          />
+        </motion.div>
       </div>
 
-      {/* 📊 Skills */}
+      {/* 🧠 Skills Section */}
       <motion.h2
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -103,7 +102,7 @@ const SkillSphere = () => {
       </motion.h2>
 
       <p className="mx-auto mb-12 max-w-2xl text-center text-lg text-white/90">
-        Building smart full-stack applications & agentic AI solutions using modern frameworks and open-source technologies.
+        Building smart full-stack applications &amp; agentic AI solutions using modern frameworks and open-source technologies.
       </p>
 
       <div className="mx-auto max-w-4xl space-y-6">
@@ -125,7 +124,7 @@ const SkillSphere = () => {
         ))}
       </div>
 
-      {/* 🛠 Tech Stack Marquee */}
+      {/* 🚀 Tech Stack Marquee */}
       <h2 className="mt-20 mb-10 text-center text-3xl font-bold text-blue-400">
         Tech Stack
       </h2>
