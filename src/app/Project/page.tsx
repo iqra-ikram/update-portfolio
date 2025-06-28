@@ -2,18 +2,63 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image"; // ✅ Next.js image optimization
+import Image from "next/image";
 
 const projects = [
-  { title: "E-Commerce Website", description: "A sleek portfolio showcasing my projects.", image: "/alex.png", link: "https://alex-store-git-main-iqra-ikrams-projects.vercel.app/" },
-  { title: "Online Furniture Rental", description: "A platform for renting Furniture Items.", image: "/ll.png", link: "https://hackathone-eta.vercel.app/" },
-  { title: "File Converter App", description: "File Converter & Cleaner", image: "/file.png", link: "https://growth-mind-set-iqra-ikram.streamlit.app/" },
-  { title: "An Online Beauty Platform", description: "An online Beauty products platform.", image: "/mod.png", link: "https://html-css-website-1lg7.vercel.app/" },
-  { title: "Blog CMS", description: "A content management system for blogs.", image: "/bl.png", link: "https://milestone-3-eosin-nu.vercel.app/" },
-  { title: "Modern Login Page", description: "Login Page with Modern CSS", image: "/log.png", link: "https://mylogin-xi.vercel.app/" },
-  { title: "Password Strength Meter", description: "A simple Password Generator", image: "/ps.png", link: "https://password-meter-app.streamlit.app/" },
-  { title: "Mock Api", description: "Real-time Api Fetching Data", image: "/mockk.png", link: "https://mockapi-chi.vercel.app/" },
-  { title: "Website For Company", description: "A Whitespace platform.", image: "/white.png", link: "https://whitespace-eta.vercel.app/" },
+  {
+    title: "E-Commerce Website",
+    description: "A sleek portfolio showcasing my projects.",
+    image: "/alex.png",
+    link: "https://alex-store-git-main-iqra-ikrams-projects.vercel.app/",
+  },
+  {
+    title: "Online Furniture Rental",
+    description: "A platform for renting Furniture Items.",
+    image: "/ll.png",
+    link: "https://hackathone-eta.vercel.app/",
+  },
+  {
+    title: "File Converter App",
+    description: "File Converter & Cleaner",
+    image: "/file.png",
+    link: "https://growth-mind-set-iqra-ikram.streamlit.app/",
+  },
+  {
+    title: "An Online Beauty Platform",
+    description: "An online Beauty products platform.",
+    image: "/mod.png",
+    link: "https://html-css-website-1lg7.vercel.app/",
+  },
+  {
+    title: "Blog CMS",
+    description: "A content management system for blogs.",
+    image: "/bl.png",
+    link: "https://milestone-3-eosin-nu.vercel.app/",
+  },
+  {
+    title: "Modern Login Page",
+    description: "Login Page with Modern CSS",
+    image: "/log.png",
+    link: "https://mylogin-xi.vercel.app/",
+  },
+  {
+    title: "Password Strength Meter",
+    description: "A simple Password Generator",
+    image: "/ps.png",
+    link: "https://password-meter-app.streamlit.app/",
+  },
+  {
+    title: "Mock Api",
+    description: "Real-time Api Fetching Data",
+    image: "/mockk.png",
+    link: "https://mockapi-chi.vercel.app/",
+  },
+  {
+    title: "Website For Company",
+    description: "A Whitespace platform.",
+    image: "/white.png",
+    link: "https://whitespace-eta.vercel.app/",
+  },
 ];
 
 const itemsPerPage = 6;
@@ -26,7 +71,7 @@ export default function Projects() {
 
   return (
     <section className="relative bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-white min-h-screen py-24 px-6 overflow-hidden">
-      {/* Background Animated Glows */}
+      {/* Background Glows */}
       <div className="absolute top-[-100px] left-[-100px] w-[300px] h-[300px] bg-purple-600 opacity-30 blur-[150px] rounded-full animate-pulse z-0" />
       <div className="absolute bottom-[-100px] right-[-100px] w-[300px] h-[300px] bg-pink-500 opacity-30 blur-[150px] rounded-full animate-ping z-0" />
 
@@ -43,43 +88,39 @@ export default function Projects() {
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {selectedProjects.map((project, index) => (
-            <motion.div
+            <motion.a
               key={index}
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ scale: 1.05, rotate: 1 }}
               className="relative rounded-xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-xl shadow-xl hover:shadow-pink-500/30 transition-all duration-300 group"
             >
-              <motion.div
-                className="w-full h-40 relative rounded-lg mb-4 overflow-hidden border border-white/10 group-hover:scale-105 transition-transform duration-300"
-              >
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-lg"
-                  priority
-                />
-              </motion.div>
               <div className="p-4 flex flex-col h-full justify-between">
+                <motion.div className="w-full h-40 relative rounded-lg mb-4 overflow-hidden border border-white/10">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-lg"
+                    priority
+                  />
+                </motion.div>
                 <h3 className="text-xl font-semibold text-white">{project.title}</h3>
                 <p className="text-sm text-gray-300 mt-2">{project.description}</p>
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-4 text-sm text-blue-300 hover:text-pink-400 transition"
-                >
+                <span className="mt-4 text-sm text-blue-300 group-hover:text-pink-400 transition">
                   ➤ View Project
-                </a>
+                </span>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
 
-        {/* Pagination Controls */}
+        {/* Pagination */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -93,9 +134,7 @@ export default function Projects() {
           >
             ← Previous
           </button>
-          <span className="text-gray-300">
-            Page {currentPage} of {totalPages}
-          </span>
+          <span className="text-gray-300">Page {currentPage} of {totalPages}</span>
           <button
             onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
             disabled={currentPage === totalPages}
