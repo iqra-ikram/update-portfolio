@@ -27,6 +27,7 @@ const Hero = () => {
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
 
+  // ✅ Fixed ESLint warning by adding currentPhrase to dependency array
   useEffect(() => {
     const current = phrases[currentPhrase];
     let delay = isDeleting ? 50 : 120;
@@ -50,7 +51,7 @@ const Hero = () => {
 
     const timer = setTimeout(handleTyping, delay);
     return () => clearTimeout(timer);
-  }, [charIndex, isDeleting]);
+  }, [charIndex, isDeleting, currentPhrase]); // ✅ Added currentPhrase here
 
   return (
     <section className="relative bg-[#0f0c29] min-h-screen flex flex-col justify-center px-6 md:px-20 text-white overflow-hidden">

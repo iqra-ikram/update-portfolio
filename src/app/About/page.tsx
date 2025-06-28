@@ -60,7 +60,7 @@ const AboutMe = () => {
           About Me
         </h2>
         <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto mb-10">
-          I'm a full-stack developer & AI enthusiast building scalable web apps and agentic AI experiences using modern frameworks like Next.js, Python, and OpenAI tools. I love writing clean code, automating workflows, and deploying smart systems that make a difference. 🌐⚡
+        I&apos;m a developer & AI enthusiast building scalable web apps and agentic AI experiences using modern frameworks like Next.js, Python, and OpenAI tools. I love writing clean code, automating workflows, and deploying smart systems that make a difference. 🌐⚡
         </p>
 
         <div className="bg-white/5 border border-pink-400/20 backdrop-blur-lg rounded-2xl p-6 md:p-10 shadow-xl hover:shadow-pink-500/20 transition duration-300">

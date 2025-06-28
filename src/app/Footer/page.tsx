@@ -1,5 +1,7 @@
+"use client";
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
 import { FaGithub, FaLinkedin, FaEnvelope, FaFacebook } from "react-icons/fa";
 
 const Footer = () => {
@@ -12,10 +14,12 @@ const Footer = () => {
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
         {/* Logo */}
         <Link href="/" className="flex justify-center items-center gap-2 mb-4">
-          <img
+          <Image
             src="https://cdn0.iconfinder.com/data/icons/software-development-19/66/11_female_developer_software_developer_female_designer_coding_expert_female_programmer_software_engineer-512.png"
             alt="Logo"
-            className="w-10 h-10 rounded-full"
+            width={40}
+            height={40}
+            className="rounded-full"
           />
           <span className="text-xl font-bold text-white">Iqra Ikram</span>
         </Link>
